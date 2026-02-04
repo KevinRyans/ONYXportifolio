@@ -63,6 +63,12 @@ const backTags = ['backend', 'api', 'server', 'database', 'ops']
 const fullTags = ['fullstack', 'full-stack', 'platform']
 const ossTags = ['open-source', 'opensource', 'oss']
 
+function mergeMissingRepos(repos: GitHubRepo[], fallback: GitHubRepo[]) {
+  const existing = new Set(repos.map((repo) => repo.name.toLowerCase()))
+  const extras = fallback.filter((repo) => !existing.has(repo.name.toLowerCase()))
+  return [...repos, ...extras]
+}
+
 function normalizeTopics(topics?: string[]) {
   return (topics ?? []).map((topic) => topic.toLowerCase())
 }
@@ -188,7 +194,9 @@ export function useProjects() {
 
       try {
         const repos = await fetchGithubRepos(profile.githubUsername)
-        const mapped = repos.map(mapRepo)
+        const fallbackRepos = profile.sampleProjects as GitHubRepo[]
+        const mergedRepos = mergeMissingRepos(repos, fallbackRepos)
+        const mapped = mergedRepos.map(mapRepo)
         const sorted = sortWithPinned(mapped, 'updated')
         const next = { data: sorted, source: 'github' as ProjectsSource, fetchedAt: Date.now() }
         cache.current = next
