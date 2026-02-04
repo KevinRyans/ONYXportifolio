@@ -76,9 +76,9 @@ const networkLinks = [
 const accentNodes = new Set([2, 5, 9, 15, 20, 21])
 
 function NetworkSvg({ accent = false }: { accent?: boolean }) {
-  const lineColor = accent ? 'rgba(56, 189, 248, 0.35)' : 'rgba(148, 163, 184, 0.22)'
-  const dotColor = accent ? 'rgba(45, 212, 191, 0.7)' : 'rgba(148, 163, 184, 0.45)'
-  const strokeWidth = accent ? 1.4 : 1
+  const lineColor = accent ? 'rgba(56, 189, 248, 0.55)' : 'rgba(148, 163, 184, 0.35)'
+  const dotColor = accent ? 'rgba(45, 212, 191, 0.85)' : 'rgba(148, 163, 184, 0.6)'
+  const strokeWidth = accent ? 1.6 : 1.1
 
   return (
     <svg
@@ -117,35 +117,35 @@ export default function AnimatedBackground() {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div className="absolute inset-0 bg-hero-glow" />
       <div className="absolute inset-0 geo-grid opacity-45 animate-gridShift motion-reduce:animate-none" />
       <div className="absolute inset-0 geo-grid-soft opacity-30 animate-gridShift motion-reduce:animate-none" />
       <motion.div
-        className="absolute inset-0 opacity-35"
+        className="absolute inset-0 opacity-60 mix-blend-screen"
         animate={
           shouldReduceMotion
             ? undefined
             : {
-                x: [0, -18, 0],
-                y: [0, 14, 0],
+                x: [0, -22, 0],
+                y: [0, 18, 0],
               }
         }
-        transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut' }}
       >
         <NetworkSvg />
       </motion.div>
       <motion.div
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0 opacity-45 mix-blend-screen"
         animate={
           shouldReduceMotion
             ? undefined
             : {
-                x: [0, 16, 0],
-                y: [0, -12, 0],
+                x: [0, 20, 0],
+                y: [0, -16, 0],
               }
         }
-        transition={{ duration: 34, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 36, repeat: Infinity, ease: 'easeInOut' }}
       >
         <NetworkSvg accent />
       </motion.div>
