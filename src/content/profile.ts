@@ -53,8 +53,8 @@ export const profile = {
     'I love clean, premium UI and build fullstack solutions with structured code and strong user experience. I am extremely passionate about general development and I love to see results. I have also built solid experience in game server development, spending a lot of time with FiveM servers and other game server stacks.',
   links: {
     github: 'https://github.com/KevinRyans',
-    discord: 'https://discord.com',
-    email: 'mailto:you@example.com',
+    discord: 'https://discord.com/users/337288161094795294',
+    email: 'mailto:michael@firix.no',
     linkedin: 'https://www.linkedin.com/in/your-handle/',
   },
   githubUsername: 'KevinRyans',
@@ -89,7 +89,7 @@ export const profile = {
     profileImage: 'images/profile.png',
     profileAlt: 'Portrait of me',
     profileLabel: 'Profile',
-    profileNote: 'Self-taught · Hobby',
+    profileNote: 'Self-taught - Hobby',
     memojiImage: 'images/memoji.png',
     memojiAlt: 'Apple Memoji',
     profileScale: 1.06,
@@ -110,7 +110,7 @@ export const profile = {
     {
       title: 'Backend',
       description:
-        'APIs, auth, and data flows that are robust, fast, and easy to maintain — including game server backends.',
+        'APIs, auth, and data flows that are robust, fast, and easy to maintain - including game server backends.',
       icon: 'Server',
     },
     {
@@ -233,13 +233,13 @@ export const profile = {
       },
       {
         label: 'Discord',
-        href: 'https://discord.com',
-        value: 'onyxnor',
+        href: 'https://discord.com/users/337288161094795294',
+        value: '337288161094795294',
       },
       {
         label: 'Email',
-        href: 'mailto:you@example.com',
-        value: 'you@example.com',
+        href: 'mailto:michael@firix.no',
+        value: 'michael@firix.no',
       },
     ] satisfies ContactLink[],
   },
