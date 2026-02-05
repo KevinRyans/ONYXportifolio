@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Mail, Github, Phone, Check } from 'lucide-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { profile } from '../content/profile'
 import SectionHeader from '../components/ui/SectionHeader'
@@ -16,19 +18,12 @@ function DiscordIcon({
   size?: number
 }) {
   return (
-    <svg
+    <FontAwesomeIcon
+      icon={faDiscord}
       className={className}
-      viewBox="0 0 256 199"
-      width={size}
-      height={size}
+      style={{ fontSize: size }}
       aria-hidden="true"
-      focusable="false"
-    >
-      <path
-        fill="currentColor"
-        d="M216.9 16.5A208.4 208.4 0 0 0 164.5 0c-2.3 4.2-4.9 9.9-6.7 14.4a191 191 0 0 0-57.7 0c-1.8-4.5-4.5-10.2-6.8-14.4a208.4 208.4 0 0 0-52.4 16.5C7.7 65.6-4.8 113.3 1.5 160.2c26.6 19.7 52.4 31.7 77.8 39.5 6.3-8.6 11.9-17.8 16.9-27.5a135.6 135.6 0 0 1-26.7-12.8c2.2-1.6 4.4-3.3 6.5-5 51.5 24.2 107.5 24.2 158.4 0 2.1 1.7 4.3 3.4 6.5 5a168.4 168.4 0 0 1-26.8 12.8 181 181 0 0 0 16.9 27.5c25.4-7.8 51.2-19.8 77.8-39.5 7.7-57.1-12.5-104.6-39.1-143.7ZM86.3 134.6c-13.3 0-24.2-12.2-24.2-27.2 0-15 10.7-27.2 24.2-27.2 13.4 0 24.3 12.2 24.2 27.2 0 15-10.7 27.2-24.2 27.2Zm83.4 0c-13.3 0-24.2-12.2-24.2-27.2 0-15 10.7-27.2 24.2-27.2 13.4 0 24.3 12.2 24.2 27.2 0 15-10.7 27.2-24.2 27.2Z"
-      />
-    </svg>
+    />
   )
 }
 
