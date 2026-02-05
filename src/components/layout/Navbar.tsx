@@ -10,6 +10,8 @@ import { buttonStyles } from '../ui/buttonStyles'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
+  const brandName = profile.brand?.name ?? profile.name
+  const brandMark = profile.brand?.mark ?? profile.name.slice(0, 1)
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-base-950/70 backdrop-blur-xl">
@@ -18,11 +20,11 @@ export default function Navbar() {
           <div className="relative h-9 w-9">
             <div className="absolute inset-0 rounded-full bg-accent-500/20 blur-xl" />
             <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sm font-semibold text-accent-300">
-              {profile.name.slice(0, 1)}
+              {brandMark}
             </div>
           </div>
           <div className="hidden text-sm font-semibold tracking-wide text-slate-100 sm:block">
-            {profile.name}
+            {brandName}
           </div>
         </Link>
 

@@ -40,9 +40,13 @@ export type ContactLink = {
 
 export const profile = {
   meta: {
-    title: 'ONYX Portfolio',
+    title: 'FIRIX.NO',
     description:
       'Premium developer portfolio with modern dark UI, smooth motion, and GitHub-powered projects.',
+  },
+  brand: {
+    name: 'FIRIX.NO',
+    mark: 'F',
   },
   name: 'Michael',
   role: 'Fullstack Developer',
@@ -244,7 +248,7 @@ export const profile = {
     ] satisfies ContactLink[],
   },
   footer: {
-    title: 'ONYX Portfolio',
+    title: 'FIRIX.NO',
     subtitle: 'Dark, premium, and modern web development.',
     note: 'Built with React, Tailwind, and Framer Motion.',
   },
@@ -285,7 +289,7 @@ export const profile = {
   pinnedProjects: [
     {
       repo: 'ONYXportifolio',
-      displayName: 'ONYX Portfolio',
+      displayName: 'FIRIX Portfolio',
       description:
         'Premium dark developer portfolio built with Vite, React, Tailwind, and Framer Motion.',
       tags: ['Frontend', 'React', 'Vite', 'Tailwind'],
