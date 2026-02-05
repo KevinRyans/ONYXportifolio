@@ -410,11 +410,11 @@ export const profile = {
     },
     {
       id: 3,
-      name: 'Mafiaspill-1',
-      full_name: 'KevinRyans/Mafiaspill-1',
-      html_url: 'https://github.com/KevinRyans/Mafiaspill-1',
+      name: 'Mafiaspill',
+      full_name: 'KevinRyans/Mafiaspill',
+      html_url: 'https://github.com/KevinRyans/Mafiaspill',
       description:
-        'Text-based MMO-inspired crime RPG with a fictional crypto-noir theme, including progression, economy, and turn-based combat.',
+        'Text-based crime RPG inspired by classic MMO progression, with economy systems, factions, and turn-based combat.',
       language: 'TypeScript',
       stargazers_count: 0,
       forks_count: 0,
