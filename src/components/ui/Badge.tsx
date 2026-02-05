@@ -1,12 +1,14 @@
 import { cn } from '../../lib/utils'
 
 export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
-  tone?: 'default' | 'accent'
+  tone?: 'default' | 'accent' | 'warning' | 'success'
 }
 
 const toneStyles = {
   default: 'bg-white/10 text-slate-200',
   accent: 'bg-accent-500/20 text-accent-300',
+  warning: 'bg-amber-400/20 text-amber-200 border-amber-300/40',
+  success: 'bg-emerald-500/20 text-emerald-200 border-emerald-400/40',
 }
 
 export default function Badge({ tone = 'default', className, ...props }: BadgeProps) {

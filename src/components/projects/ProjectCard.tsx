@@ -4,6 +4,7 @@ import { GitFork, Star } from 'lucide-react'
 import { useReducedMotion } from 'framer-motion'
 import { profile } from '../../content/profile'
 import { type Project } from '../../lib/projects'
+import { getStatusTone, getTagBadgeClass } from '../../lib/badgeStyles'
 import { cn, formatNumber } from '../../lib/utils'
 import Badge from '../ui/Badge'
 
@@ -83,13 +84,17 @@ export default function ProjectCard({
                 {profile.labels.featuredLabel}
               </Badge>
             ) : null}
-            {project.status ? <Badge className="shrink-0">{project.status}</Badge> : null}
+            {project.status ? (
+              <Badge tone={getStatusTone(project.status)} className="shrink-0">
+                {project.status}
+              </Badge>
+            ) : null}
           </div>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <Badge key={tag} className="bg-white/10 text-slate-200">
+            <Badge key={tag} className={getTagBadgeClass(tag)}>
               {tag}
             </Badge>
           ))}

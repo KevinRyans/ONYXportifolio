@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { ExternalLink, Github, ArrowLeft } from 'lucide-react'
 import { profile } from '../content/profile'
 import { useProjects } from '../lib/projects'
+import { getStatusTone, getTagBadgeClass } from '../lib/badgeStyles'
 import { buttonStyles } from '../components/ui/buttonStyles'
 import Badge from '../components/ui/Badge'
 import Card from '../components/ui/Card'
@@ -86,7 +87,7 @@ export default function ProjectDetail() {
             {project.status ? (
               <div className="flex items-center justify-between">
                 <span className="text-slate-400">{profile.labels.statusLabel}</span>
-                <span>{project.status}</span>
+                <Badge tone={getStatusTone(project.status)}>{project.status}</Badge>
               </div>
             ) : null}
             <div className="flex items-center justify-between">
@@ -113,7 +114,9 @@ export default function ProjectDetail() {
           </h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <Badge key={tag}>{tag}</Badge>
+              <Badge key={tag} className={getTagBadgeClass(tag)}>
+                {tag}
+              </Badge>
             ))}
           </div>
           {project.topics.length > 0 ? (
