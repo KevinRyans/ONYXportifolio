@@ -333,14 +333,32 @@ export const profile = {
   ] satisfies ProjectOverride[],
   projectOverrides: [
     {
+      repo: 'firix-portfolio',
+      displayName: 'Firix Portfolio',
+      description:
+        'Personal developer portfolio showcasing premium dark UI, smooth motion, and a GitHub-driven projects list.',
+      tags: ['Frontend', 'React', 'Vite', 'Tailwind'],
+      category: 'Frontend',
+      status: 'In progress',
+    },
+    {
       repo: 'Mafiaspill-1',
       displayName: 'Mafiaspill',
       description:
-        'Text-based MMO-inspired crime RPG with a fictional crypto-noir theme, featuring progression, economy, and turn-based combat.',
+        'Text-based crime RPG inspired by classic MMO progression, with economy systems, factions, and turn-based combat.',
       longDescription:
         'A modern text-based MMO-inspired RPG with a fictional crypto-noir theme, built as a monorepo with a React web app, Fastify API, PostgreSQL, and real-time features via Socket.IO.',
       tags: ['Fullstack', 'TypeScript', 'Fastify', 'PostgreSQL', 'Socket.IO'],
       category: 'Fullstack',
+      status: 'In progress',
+    },
+    {
+      repo: 'KevinRyans',
+      displayName: 'KevinRyans',
+      description:
+        'Personal profile hub and experiments space for testing ideas, layouts, and UI concepts.',
+      tags: ['Frontend', 'UI'],
+      category: 'Frontend',
       status: 'In progress',
     },
   ] satisfies ProjectOverride[],
