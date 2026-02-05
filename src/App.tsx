@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { AnimatePresence, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, useReducedMotion, motion } from 'framer-motion'
 import { profile } from './content/profile'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
@@ -21,7 +21,8 @@ import NotFound from './pages/NotFound'
 export default function App() {
   const location = useLocation()
   const shouldReduceMotion = useReducedMotion()
-  const [showBoot, setShowBoot] = useState(false)
+  const [showBoot, setShowBoot] = useState(true)
+  const [bootReady, setBootReady] = useState(false)
 
   useEffect(() => {
     const key = 'firix_boot_at'
@@ -37,6 +38,7 @@ export default function App() {
 
     if (Number.isNaN(last) || now - last > cooldown) {
       setShowBoot(true)
+      setBootReady(true)
       try {
         localStorage.setItem(key, String(now))
       } catch {
@@ -46,6 +48,8 @@ export default function App() {
       const timer = window.setTimeout(() => setShowBoot(false), duration)
       return () => window.clearTimeout(timer)
     }
+    setShowBoot(false)
+    setBootReady(true)
     return undefined
   }, [shouldReduceMotion])
 
@@ -75,24 +79,36 @@ export default function App() {
       <CommandPalette />
       <ScrollToTop />
 
-      <div className="relative z-10 flex min-h-screen flex-col">
+      <motion.div
+        className="relative z-10 flex min-h-screen flex-col"
+        initial={false}
+        animate={{
+          opacity: showBoot ? 0 : 1,
+          y: showBoot ? 10 : 0,
+          filter: showBoot ? 'blur(8px)' : 'blur(0px)',
+        }}
+        transition={{ duration: showBoot ? 0.1 : 0.7, ease: 'easeOut' }}
+        style={{ pointerEvents: showBoot ? 'none' : 'auto' }}
+      >
         <main className="flex-1 pt-24">
-          <AnimatePresence mode="wait">
-            <PageTransition key={location.pathname}>
-              <Routes location={location}>
-                <Route path="/" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/projects/:slug" element={<ProjectDetail />} />
-                <Route path="/open-source" element={<OpenSource />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </PageTransition>
-          </AnimatePresence>
+          {bootReady ? (
+            <AnimatePresence mode="wait">
+              <PageTransition key={location.pathname}>
+                <Routes location={location}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects/:slug" element={<ProjectDetail />} />
+                  <Route path="/open-source" element={<OpenSource />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </PageTransition>
+            </AnimatePresence>
+          ) : null}
         </main>
         <Footer />
-      </div>
+      </motion.div>
     </div>
   )
 }
