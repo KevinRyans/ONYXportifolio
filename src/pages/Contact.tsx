@@ -8,11 +8,19 @@ import Button from '../components/ui/Button'
 import CopyButton from '../components/ui/CopyButton'
 import Reveal from '../components/sections/Reveal'
 
-function DiscordIcon({ className }: { className?: string }) {
+function DiscordIcon({
+  className,
+  size = 16,
+}: {
+  className?: string
+  size?: number
+}) {
   return (
     <svg
       className={className}
       viewBox="0 0 256 199"
+      width={size}
+      height={size}
       aria-hidden="true"
       focusable="false"
     >
@@ -102,9 +110,9 @@ export default function Contact() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                    className="focus-ring flex items-center gap-2 rounded-full px-2 py-1 text-sm text-slate-200"
+                      className="focus-ring flex items-center gap-2 rounded-full px-2 py-1 text-sm text-slate-200"
                     >
-                      <Icon size={16} /> {link.value}
+                      <Icon size={16} className="text-slate-200" /> {link.value}
                     </a>
                     <CopyButton
                       value={link.value}
