@@ -1,17 +1,24 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { profile } from '../../content/profile'
 
-const statusLines = [
-  'Loading core modules',
-  'Compiling interface layers',
-  'Syncing data cache',
-  'Rendering UI',
-]
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.06, delayChildren: 0.2 },
+  },
+}
+
+const letter = {
+  hidden: { opacity: 0, y: 8, filter: 'blur(6px)' },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)' },
+}
 
 export default function BootScreen() {
   const shouldReduceMotion = useReducedMotion()
   const brandName = profile.brand?.name ?? profile.meta.title
   const brandMark = profile.brand?.mark ?? profile.name.slice(0, 1)
+  const letters = brandName.split('')
 
   return (
     <motion.div
@@ -28,45 +35,55 @@ export default function BootScreen() {
       <div className="absolute inset-0 geo-grid-soft opacity-25 motion-reduce:animate-none" />
 
       <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center">
-        <div className="mb-6 flex items-center gap-4">
-          <div className="relative h-14 w-14">
-            <div className="absolute inset-0 rounded-2xl bg-accent-500/30 blur-xl" />
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-xl font-semibold text-accent-300">
+        <div className="mb-8 flex flex-col items-center gap-5">
+          <div className="relative flex items-center justify-center">
+            <motion.div
+              className="h-20 w-20 rounded-full border border-white/15 border-t-accent-400"
+              animate={shouldReduceMotion ? undefined : { rotate: 360 }}
+              transition={{
+                duration: 1.1,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            />
+            <div className="absolute flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-xl font-semibold text-accent-300 shadow-soft">
               {brandMark}
             </div>
           </div>
-          <div className="text-left">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-slate-500">
-              Booting
-            </p>
-            <p className="text-2xl font-semibold text-white">{brandName}</p>
-          </div>
+
+          <motion.div
+            className="text-3xl font-semibold text-white"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {letters.map((char, index) => (
+              <motion.span
+                key={`${char}-${index}`}
+                variants={letter}
+                className={char === ' ' ? 'inline-block w-2' : 'inline-block'}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <p className="text-sm text-slate-400">Assembling interface modules</p>
         </div>
 
-        <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/5 p-5 text-left shadow-soft">
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
-            Initializing
-          </p>
-          <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
-            <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-accent-500 via-teal-400 to-accent-300"
-              initial={{ width: '0%' }}
-              animate={{ width: '100%' }}
-              transition={{
-                duration: shouldReduceMotion ? 0.7 : 3.5,
-                ease: 'easeInOut',
-              }}
-            />
-          </div>
-          <div className="mt-4 space-y-2 text-sm text-slate-400">
-            {statusLines.map((line) => (
-              <div key={line} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent-400/70" />
-                <span>{line}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <motion.div
+          className="flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-teal-300"
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: shouldReduceMotion ? 0.3 : 2.6,
+            duration: 0.5,
+            ease: 'easeOut',
+          }}
+        >
+          <span className="h-2 w-2 rounded-full bg-teal-300" />
+          Complete
+        </motion.div>
       </div>
     </motion.div>
   )
