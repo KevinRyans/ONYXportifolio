@@ -17,10 +17,6 @@ function getInitialLanguage(): Language {
   const stored = window.localStorage.getItem(STORAGE_KEY)
   if (stored === 'en' || stored === 'no') return stored
 
-  const browser = window.navigator.language.toLowerCase()
-  if (browser.startsWith('no') || browser.startsWith('nb') || browser.startsWith('nn')) {
-    return 'no'
-  }
   return 'en'
 }
 
