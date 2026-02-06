@@ -59,7 +59,7 @@ export const profile = {
     github: 'https://github.com/KevinRyans',
     discord: 'https://discord.com/users/337288161094795294',
     email: 'mailto:michael@firix.no',
-    linkedin: 'https://www.linkedin.com/in/your-handle/',
+    linkedin: 'https://www.linkedin.com/in/michaelfiring/',
   },
   githubUsername: 'KevinRyans',
   hiddenProjects: ['ONYXportifolio'],
@@ -182,36 +182,39 @@ export const profile = {
     subtitle:
       'A clean, print-ready overview for interviews or quick sharing.',
     locationLabel: 'Location',
-    location: 'Norway',
+    location: 'Tønsberg, Norway',
     summaryTitle: 'Summary',
     summary:
-      'Self-taught fullstack developer with 6+ years of experience, focused on clean UI, strong structure, and practical results. Much of my work was built for personal gaming projects and community tooling, often stored locally rather than on GitHub.',
+      'Service-minded, solution-focused fullstack developer from Tønsberg, Norway with 6+ years of self-taught experience. I have a strong interest in cybersecurity, networking, and server development, and I am motivated by practical results and clean, premium UI. Many projects were built for personal gaming communities and kept locally rather than on GitHub, but the hands-on learning remains. I combine technical curiosity with structured execution and a strong focus on quality.',
     highlightsTitle: 'Highlights',
     highlights: [
       '6+ years of self-taught development experience',
       'Hands-on game server development (FiveM and other stacks)',
-      'Focus on premium UI, clean structure, and reliable delivery',
+      'Currently studying cybersecurity at a higher vocational academy',
+      'Strong focus on quality, structure, and reliable delivery',
       'Built tools for gaming communities and internal workflows',
     ],
     experienceTitle: 'Experience',
     experience: [
       {
-        time: '2019 - 2021',
-        title: 'Foundations',
+        time: 'Sep 2021 - Jul 2024',
+        title: 'Conference & Technical Coordination',
         description:
-          'Built core skills in HTML, CSS, JavaScript, and modern frontend tooling through self-directed learning.',
-      },
-      {
-        time: '2021 - 2024',
-        title: 'Fullstack projects',
-        description:
-          'Created fullstack apps with React, APIs, and databases, plus gaming tools and server tooling.',
+          'Planned and coordinated conferences and events, ensuring technical setups, logistics, and communication ran smoothly for large audiences.',
       },
       {
         time: '2024 - Now',
-        title: 'Premium UI & systems',
+        title: 'Fullstack projects & game tooling',
         description:
-          'Refining design systems, performance, and quality while building portfolio and client-ready experiences.',
+          'Building fullstack apps, game server tools, and portfolio experiences with a focus on premium UI and clean structure.',
+      },
+    ],
+    educationTitle: 'Education',
+    education: [
+      {
+        time: 'Aug 2023 - Jun 2025',
+        title: 'Higher Vocational Education, Cybersecurity',
+        description: 'Gokstad Akademiet, Sandefjord.',
       },
     ],
     projectsTitle: 'Selected Projects',
@@ -234,14 +237,21 @@ export const profile = {
     ],
     skillsTitle: 'Core Skills',
     skills: [
+      'Cybersecurity fundamentals',
+      'Networking & server development',
       'React',
       'TypeScript',
       'Node.js',
-      'Vite',
-      'Tailwind CSS',
-      'PostgreSQL',
-      'Framer Motion',
+      'Microsoft Azure',
+      'Microsoft 365',
       'Game server tooling',
+    ],
+    interestsTitle: 'Interests',
+    interests: [
+      'Networking & server development',
+      'Cybersecurity',
+      'Programming & development',
+      'Gaming communities',
     ],
     contactTitle: 'Contact',
     printLabel: 'Print resume',

@@ -78,6 +78,21 @@ export default function Resume() {
       </Reveal>
 
       <Reveal className="mt-10">
+        <SectionHeader title={resume.educationTitle} />
+        <div className="mt-4 space-y-4">
+          {resume.education.map((item) => (
+            <Card key={item.title} className="print-section">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-300">
+                {item.time}
+              </div>
+              <h3 className="mt-2 text-lg font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-300">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="mt-10">
         <SectionHeader title={resume.projectsTitle} />
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           {resume.projects.map((project) => (
@@ -94,6 +109,15 @@ export default function Resume() {
         <div className="mt-4 flex flex-wrap gap-2">
           {resume.skills.map((skill) => (
             <Badge key={skill}>{skill}</Badge>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="mt-10">
+        <SectionHeader title={resume.interestsTitle} />
+        <div className="mt-4 flex flex-wrap gap-2">
+          {resume.interests.map((item) => (
+            <Badge key={item}>{item}</Badge>
           ))}
         </div>
       </Reveal>
