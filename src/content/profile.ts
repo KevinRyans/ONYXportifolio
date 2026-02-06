@@ -52,9 +52,9 @@ export const profile = {
   role: 'Fullstack Developer',
   tagline: 'Extremely passionate about development and I love seeing real results.',
   intro:
-    'I am 24 years old, self-taught, and have been building projects for about 6 years as a hobby.',
+    'I am 24 years old, self-taught, and have been building projects for about 6 years as a hobby. By day I work in technical operations as a Maintenance Manager.',
   bio:
-    'I am based in Norway and I love clean, premium UI with strong structure and user experience. A lot of my work was built for myself in gaming-related contexts, and many of those projects lived locally instead of on GitHub. Some of that work is gone, but the knowledge and experience remain. I am extremely passionate about development and I love to see real results. I have also built solid experience in game server development, spending a lot of time with FiveM servers and other game server stacks.',
+    'I am based in Norway and work as Maintenance Manager at a hotel property, responsible for technical operations, compliance, and vendor coordination. I love clean, premium UI with strong structure and user experience, and I build fullstack projects as a hobby. Much of my work was built for gaming communities and kept locally rather than on GitHub, but the knowledge and experience remain. I have solid experience in game server development, spending a lot of time with FiveM servers and other game server stacks.',
   links: {
     github: 'https://github.com/KevinRyans',
     discord: 'https://discord.com/users/337288161094795294',
@@ -79,10 +79,10 @@ export const profile = {
     heroEyebrow: 'Fullstack Developer',
     heroTitle: "Hi, I'm Michael",
     heroSubtitle:
-      'Self-taught fullstack developer building modern web experiences with a premium dark aesthetic.',
+      'Self-taught fullstack developer (hobby) building modern web experiences, alongside a full-time role in technical operations.',
     whatIDoTitle: 'What I do',
     whatIDoSubtitle:
-      'I build fullstack products from idea to production with focus on quality and clarity.',
+      'I combine modern web development with real-world technical operations and structured delivery.',
     latestWorksTitle: 'Latest Works',
     latestWorksSubtitle: 'A curated selection of projects pulled from GitHub.',
     stackTitle: 'Stack',
@@ -126,9 +126,9 @@ export const profile = {
       icon: 'Palette',
     },
     {
-      title: 'Quality',
+      title: 'Technical Operations',
       description:
-        'Structured code, consistent components, and attention to performance details.',
+        'Facilities management, compliance, and reliable technical systems in day-to-day operations.',
       icon: 'Shield',
     },
   ],
@@ -145,7 +145,7 @@ export const profile = {
   ],
   skills: ['Frontend', 'Backend', 'UI/UX', 'System Design', 'Quality'],
   now:
-    'Building a premium dark portfolio as a hobby, refining design systems, and experimenting with game server tooling.',
+    'Leading technical operations as a Maintenance Manager while refining my portfolio, design system, and game server tooling on the side.',
   projects: {
     title: 'Projects',
     subtitle:
@@ -172,7 +172,7 @@ export const profile = {
   about: {
     title: 'About',
     subtitle:
-      'Self-taught fullstack developer from Norway, 24 years old, with about 6 years of experience and a love for premium UI.',
+      'Self-taught fullstack developer from Norway, 24 years old, with about 6 years of experience and a full-time role in technical operations.',
     timelineTitle: 'Milestones',
     toolboxTitle: 'Toolbox',
     workStyleTitle: 'How I work',
@@ -185,28 +185,50 @@ export const profile = {
     location: 'Tønsberg, Norway',
     summaryTitle: 'Summary',
     summary:
-      'Service-minded, solution-focused fullstack developer from Tønsberg, Norway with 6+ years of self-taught experience. I have a strong interest in cybersecurity, networking, and server development, and I am motivated by practical results and clean, premium UI. Many projects were built for personal gaming communities and kept locally rather than on GitHub, but the hands-on learning remains. I combine technical curiosity with structured execution and a strong focus on quality.',
+      'Service-minded, solution-focused fullstack developer from Tønsberg, Norway with 6+ years of self-taught experience and a strong interest in cybersecurity, networking, and server development. I currently work as Maintenance Manager, coordinating technical operations, vendors, and compliance. Many projects were built for personal gaming communities and kept locally rather than on GitHub, but the hands-on learning remains. I combine technical curiosity with structured execution and a strong focus on quality.',
     highlightsTitle: 'Highlights',
     highlights: [
+      'Maintenance Manager with responsibility for facilities operations and compliance',
       '6+ years of self-taught development experience',
       'Hands-on game server development (FiveM and other stacks)',
-      'Currently studying cybersecurity at a higher vocational academy',
-      'Strong focus on quality, structure, and reliable delivery',
+      'Higher vocational studies in cybersecurity',
       'Built tools for gaming communities and internal workflows',
     ],
     experienceTitle: 'Experience',
     experience: [
       {
-        time: 'Sep 2021 - Jul 2024',
-        title: 'Conference & Technical Coordination',
+        time: 'Jun 2025 - Present',
+        title: 'Maintenance Manager · Quality Hotel Tønsberg',
         description:
-          'Planned and coordinated conferences and events, ensuring technical setups, logistics, and communication ran smoothly for large audiences.',
+          'Responsible for strategic and operational facilities management, technical systems, and vendor coordination.',
+        details: [
+          'Oversee FM operations and ensure compliant, reliable building systems',
+          'Manage service agreements and external vendors for quality and cost control',
+          'Ensure stable operation of HVAC, plumbing, fire safety, and access control',
+          'Plan coordinated maintenance, repairs, and safety routines',
+        ],
       },
       {
-        time: '2024 - Now',
-        title: 'Fullstack projects & game tooling',
+        time: 'Jul 2024 - Jun 2025',
+        title: 'Maintenance Assistant · Quality Hotel Tønsberg',
         description:
-          'Building fullstack apps, game server tools, and portfolio experiences with a focus on premium UI and clean structure.',
+          'Handled day-to-day maintenance tasks and property upkeep.',
+        details: [
+          'Performed routine maintenance and minor repairs',
+          'Maintained outdoor areas, including lawn care',
+          'Handled snow clearing and entrance safety',
+        ],
+      },
+      {
+        time: 'Sep 2021 - Jul 2024',
+        title: 'Conference & Events Coordinator · Quality Hotel Tønsberg',
+        description:
+          'Planned and coordinated courses and conferences for up to 700 guests.',
+        details: [
+          'Acted as primary contact for organizers and event leads',
+          'Coordinated with event agencies and internal teams',
+          'Ensured technical setup, catering, and logistics ran smoothly',
+        ],
       },
     ],
     educationTitle: 'Education',
@@ -215,6 +237,16 @@ export const profile = {
         time: 'Aug 2023 - Jun 2025',
         title: 'Higher Vocational Education, Cybersecurity',
         description: 'Gokstad Akademiet, Sandefjord.',
+      },
+      {
+        time: 'Aug 2018 - Sep 2021',
+        title: 'Trade Certificate, Building Operations',
+        description: 'Re Videregående Skole, Tønsberg.',
+      },
+      {
+        time: 'Aug 2017 - Jun 2018',
+        title: 'Building & Construction Technology',
+        description: 'Re Videregående Skole, Tønsberg.',
       },
     ],
     projectsTitle: 'Selected Projects',

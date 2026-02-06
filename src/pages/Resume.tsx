@@ -72,6 +72,16 @@ export default function Resume() {
               </div>
               <h3 className="mt-2 text-lg font-semibold text-white">{item.title}</h3>
               <p className="mt-2 text-sm text-slate-300">{item.description}</p>
+              {item.details && item.details.length > 0 ? (
+                <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                  {item.details.map((detail) => (
+                    <li key={detail} className="flex gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-300/70" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </Card>
           ))}
         </div>
