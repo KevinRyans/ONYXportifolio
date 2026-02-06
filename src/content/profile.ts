@@ -655,10 +655,14 @@ const noOverrides: Partial<Profile> = {
     completeLabel: 'Ferdig',
   },
   media: {
+    profileImage: 'images/profile.png',
     profileAlt: 'Portrett av meg',
     profileLabel: 'Profil',
     profileNote: 'Selvlært - Hobby',
+    memojiImage: 'images/memoji.png',
     memojiAlt: 'Apple Memoji',
+    profileScale: 1.06,
+    profileOffsetY: 14,
   },
   heroStats: [
     { value: '24', label: 'År gammel' },
