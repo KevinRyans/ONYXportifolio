@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, useReducedMotion, motion } from 'framer-motion'
-import { useProfile } from './lib/i18n'
+import { useLanguage, useProfile } from './lib/i18n'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import AnimatedBackground from './components/layout/AnimatedBackground'
@@ -22,6 +22,7 @@ import NotFound from './pages/NotFound'
 export default function App() {
   const location = useLocation()
   const profile = useProfile()
+  const { language } = useLanguage()
   const shouldReduceMotion = useReducedMotion()
   const [showBoot, setShowBoot] = useState(true)
   const [bootReady, setBootReady] = useState(false)
@@ -95,7 +96,7 @@ export default function App() {
         <main className="flex-1 pt-24">
           {bootReady ? (
             <AnimatePresence mode="wait">
-              <PageTransition key={location.pathname}>
+              <PageTransition key={`${location.pathname}-${language}`}>
                 <Routes location={location}>
                   <Route path="/" element={<Home />} />
                   <Route path="/projects" element={<Projects />} />
